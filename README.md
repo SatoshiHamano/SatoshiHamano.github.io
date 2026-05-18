@@ -1,4 +1,4 @@
-# introduction-page
+# SatoshiHamano.github.io
 
 濱野哲史 / Satoshi Hamano の個人紹介ページです。
 
@@ -29,4 +29,8 @@ pnpm build
 
 GitHub Pages向けのGitHub Actions設定を `.github/workflows/deploy.yml` に置いています。
 
-リポジトリ名を `introduction-page` 以外にする場合は、`vite.config.ts` の `base` を変更してください。
+GitHub上のリポジトリ名を `SatoshiHamano.github.io` にすると、以下のURLで公開できます。
+
+```text
+https://satoshihamano.github.io/
+```
