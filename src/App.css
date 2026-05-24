@@ -233,7 +233,7 @@ h3 {
 }
 
 .mini-card,
-.github-card,
+.profile-card,
 .game-panel {
   background: #fff;
   border: 1px solid rgba(28, 37, 65, 0.12);
@@ -280,34 +280,51 @@ h3 {
   padding: 12px 14px;
 }
 
-.github-section {
+.profiles-section {
   background: #f8f7f3;
 }
 
-.github-card {
+.profile-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.profile-card {
   color: #17202d;
   display: grid;
   gap: 10px;
-  min-height: 220px;
-  padding: 28px;
+  min-height: 172px;
+  padding: 24px;
   text-decoration: none;
 }
 
-.github-card span {
+.profile-card span {
   color: #a64837;
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
-.github-card strong {
-  font-size: clamp(2rem, 4vw, 3.8rem);
-  line-height: 1;
+.profile-card strong {
+  font-size: clamp(1.45rem, 2vw, 2.2rem);
+  line-height: 1.04;
   overflow-wrap: anywhere;
 }
 
-.github-card small {
+.profile-card small {
   align-self: end;
   color: #465365;
   font-size: 1rem;
+}
+
+.profile-card-pending {
+  background: repeating-linear-gradient(
+      -45deg,
+      rgba(30, 42, 57, 0.03),
+      rgba(30, 42, 57, 0.03) 8px,
+      rgba(255, 255, 255, 0.7) 8px,
+      rgba(255, 255, 255, 0.7) 16px
+    ),
+    #fff;
 }
 
 .playground {
@@ -390,6 +407,10 @@ footer {
 
   .lab-visual {
     min-height: 340px;
+  }
+
+  .profile-grid {
+    grid-template-columns: 1fr;
   }
 }
 

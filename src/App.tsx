@@ -5,7 +5,7 @@ type Lang = 'ja' | 'en'
 
 const text = {
   ja: {
-    nav: ['Home', 'Research', 'Career', 'GitHub', 'Playground'],
+    nav: ['Home', 'Research', 'Career', 'Profiles', 'Playground'],
     toggle: 'English',
     eyebrow: 'Researcher / Data Scientist',
     name: '濱野哲史',
@@ -21,9 +21,9 @@ const text = {
     careerTitle: 'データサイエンティストとして',
     careerCopy:
       '企業での実務は、分析・予測・意思決定支援・実装までをまとめて紹介する予定です。社名や数値を出せないものは、問題設定とアプローチ中心に書けます。',
-    githubTitle: 'GitHub Activity',
-    githubCopy:
-      'コード、実験、メモ、データ可視化、小さなツールなどをまとめます。代表リポジトリは手で選び、活動量はGitHub APIを使うか静的表示にできます。',
+    profilesTitle: 'Profiles',
+    profilesCopy:
+      '研究者としての公開プロフィール、コード、識別子、職業SNSをまとめる入口です。GitHubは実験と実装、researchmapとORCIDは研究成果への導線として並べます。',
     githubUser: 'SatoshiHamano',
     playgroundTitle: 'Playground',
     playgroundCopy: '小さなブラウザ実験を置く場所です。まずは点を研究クラスタに集めるミニゲームを入れています。',
@@ -32,7 +32,7 @@ const text = {
     footer: 'Built for GitHub Pages. More notes, papers, and small games will land here.',
   },
   en: {
-    nav: ['Home', 'Research', 'Career', 'GitHub', 'Playground'],
+    nav: ['Home', 'Research', 'Career', 'Profiles', 'Playground'],
     toggle: '日本語',
     eyebrow: 'Researcher / Data Scientist',
     name: 'Satoshi Hamano',
@@ -48,9 +48,9 @@ const text = {
     careerTitle: 'Industry Data Science',
     careerCopy:
       'Industry work can be summarized through problem settings, modeling choices, decision support, and implementation work, even when company names or exact metrics stay private.',
-    githubTitle: 'GitHub Activity',
-    githubCopy:
-      'A place to feature code, experiments, notes, visualizations, and small tools. Repositories can be curated manually or connected to the GitHub API later.',
+    profilesTitle: 'Profiles',
+    profilesCopy:
+      'A compact set of doors into research profiles, code, identifiers, and professional networks. GitHub points to experiments and implementation; researchmap and ORCID anchor the research record.',
     githubUser: 'SatoshiHamano',
     playgroundTitle: 'Playground',
     playgroundCopy: 'A corner for small browser experiments. The first toy gathers data points into a research cluster.',
@@ -61,6 +61,33 @@ const text = {
 }
 
 const skills = ['Bayesian modeling', 'Causal inference', 'Python', 'R', 'TypeScript', 'Visualization']
+
+const profileLinks = [
+  {
+    label: 'GitHub',
+    value: 'SatoshiHamano',
+    href: 'https://github.com/SatoshiHamano',
+    note: 'Repositories, experiments, and public activity',
+  },
+  {
+    label: 'researchmap',
+    value: 'HAMANO SATOSHI',
+    href: 'https://researchmap.jp/7000011229',
+    note: 'Papers, projects, research keywords',
+  },
+  {
+    label: 'ORCID',
+    value: '0000-0002-6505-3395',
+    href: 'https://orcid.org/0000-0002-6505-3395',
+    note: 'Persistent researcher identifier',
+  },
+  {
+    label: 'LinkedIn',
+    value: 'URL pending',
+    href: '',
+    note: 'Add after confirming the right profile',
+  },
+]
 
 function makePoints(seed: number) {
   return Array.from({ length: 18 }, (_, index) => {
@@ -167,17 +194,29 @@ function App() {
         </div>
       </section>
 
-      <section className="section-grid github-section" id="github">
+      <section className="section-grid profiles-section" id="profiles">
         <div>
           <p className="section-kicker">@{t.githubUser}</p>
-          <h2>{t.githubTitle}</h2>
-          <p>{t.githubCopy}</p>
+          <h2>{t.profilesTitle}</h2>
+          <p>{t.profilesCopy}</p>
         </div>
-        <a className="github-card" href="https://github.com/SatoshiHamano">
-          <span>github.com</span>
-          <strong>SatoshiHamano</strong>
-          <small>Repositories, experiments, and public activity</small>
-        </a>
+        <div className="profile-grid">
+          {profileLinks.map((link) =>
+            link.href ? (
+              <a className="profile-card" href={link.href} key={link.label}>
+                <span>{link.label}</span>
+                <strong>{link.value}</strong>
+                <small>{link.note}</small>
+              </a>
+            ) : (
+              <article className="profile-card profile-card-pending" key={link.label}>
+                <span>{link.label}</span>
+                <strong>{link.value}</strong>
+                <small>{link.note}</small>
+              </article>
+            ),
+          )}
+        </div>
       </section>
 
       <section className="playground" id="playground">
