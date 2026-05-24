@@ -17,8 +17,23 @@ const text = {
     researchTitle: 'Academic Interests',
     researchCopy:
       '赤外線高分散分光、星間物質、装置開発に関する研究の入口です。論文や研究者IDへのリンクをここにまとめ、詳しい研究内容は少しずつ追加していきます。',
-    researchItems: ['赤外線天文学', '高分散分光観測', '装置開発とデータ解析'],
-    researchItemNote: '関連する研究テーマ、論文、観測データへのメモを追加していきます。',
+    researchItems: [
+      {
+        title: '赤外線天文学',
+        description:
+          '星間物質や星形成領域を、可視光では届きにくい波長から調べてきました。特に近赤外線で見える吸収線・分子バンドに関心があります。',
+      },
+      {
+        title: '高分散分光観測',
+        description:
+          'WINEREDなどを用いた高分散分光データから、拡散星間バンドや原子・分子吸収線を測定し、天体環境の物理・化学状態を探っています。',
+      },
+      {
+        title: '装置開発とデータ解析',
+        description:
+          '観測装置、パイプライン、解析ツールをつなぎ、取得したスペクトルを科学に使える形へ整えるところまで関わってきました。',
+      },
+    ],
     projectsTitle: 'Instruments / Projects',
     publicationsTitle: 'Selected publications',
     firstAuthorTitle: '主著論文',
@@ -51,8 +66,23 @@ const text = {
     researchTitle: 'Academic Interests',
     researchCopy:
       'A compact entry point for work around infrared high-resolution spectroscopy, interstellar matter, and instrumentation. Research profile links live here; deeper notes can be added over time.',
-    researchItems: ['Infrared astronomy', 'High-resolution spectroscopy', 'Instrumentation and data analysis'],
-    researchItemNote: 'Notes on related themes, papers, and observational data will be added here.',
+    researchItems: [
+      {
+        title: 'Infrared astronomy',
+        description:
+          'I have studied interstellar matter and star-forming environments at wavelengths that can reveal structures hidden from optical observations.',
+      },
+      {
+        title: 'High-resolution spectroscopy',
+        description:
+          'Using instruments such as WINERED, I have measured diffuse interstellar bands and atomic/molecular absorption features in near-infrared spectra.',
+      },
+      {
+        title: 'Instrumentation and data analysis',
+        description:
+          'My work connects instrument development, reduction pipelines, and analysis tools to turn raw spectra into science-ready data.',
+      },
+    ],
     projectsTitle: 'Instruments / Projects',
     publicationsTitle: 'Selected publications',
     firstAuthorTitle: 'First-author papers',
@@ -289,10 +319,10 @@ function App() {
         </div>
         <div className="card-list">
           {t.researchItems.map((item) => (
-            <article className="mini-card" key={item}>
+            <article className="mini-card" key={item.title}>
               <span />
-              <h3>{item}</h3>
-              <p>{t.researchItemNote}</p>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
             </article>
           ))}
           <div className="project-block">
