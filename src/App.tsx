@@ -41,6 +41,9 @@ const text = {
     careerTitle: 'Industry Career',
     careerCopy:
       'Senior Data Scientistとして、出版業界の物流に関わる需要予測、数理最適化、サプライチェーンマネジメント理論の実装に取り組んでいます。レコメンドや分析に閉じず、フィジカルな物流を支える数値設計と意思決定支援に関わっています。',
+    helpTitle: 'Can help with',
+    helpCopy:
+      '需要予測、数理最適化、データ分析、分析ワークフローの自動化、研究者向けのデータ解析支援や技術相談などに対応できます。',
     profilesTitle: 'Profiles',
     profilesCopy:
       'コード、実験、職業SNSなど、研究以外の公開プロフィールをまとめる入口です。',
@@ -90,6 +93,9 @@ const text = {
     careerTitle: 'Industry Data Science',
     careerCopy:
       'As a Senior Data Scientist, I work on demand forecasting, mathematical optimization, and applied supply-chain management for physical logistics in the publishing industry. The work goes beyond recommendation or analysis, supporting numerical decision-making that affects inventory flow, distribution, and operational execution.',
+    helpTitle: 'Can help with',
+    helpCopy:
+      'Forecasting, optimization, data analysis, workflow automation, and technical support for academic researchers working with data.',
     profilesTitle: 'Profiles',
     profilesCopy:
       'A compact set of doors into code, experiments, and professional networks outside the research profile pages.',
@@ -111,6 +117,25 @@ const skills = [
   'Decision support',
   'Python',
   'Operations',
+]
+
+const helpAreas = [
+  {
+    label: 'Forecasting',
+    description: 'Demand, sales, inventory, or operational time-series forecasting.',
+  },
+  {
+    label: 'Optimization',
+    description: 'Mathematical optimization for allocation, logistics, scheduling, and inventory decisions.',
+  },
+  {
+    label: 'Data workflow',
+    description: 'Python analysis pipelines, reproducible reports, dashboards, and automation.',
+  },
+  {
+    label: 'Academic support',
+    description: 'Data analysis, visualization, and technical consultation for research projects.',
+  },
 ]
 
 const researchLinks = [
@@ -386,6 +411,18 @@ function App() {
           {skills.map((skill) => (
             <span key={skill}>{skill}</span>
           ))}
+        </div>
+        <div className="help-panel">
+          <p className="section-kicker">{t.helpTitle}</p>
+          <p>{t.helpCopy}</p>
+          <div className="help-grid">
+            {helpAreas.map((area) => (
+              <article className="help-card" key={area.label}>
+                <h3>{area.label}</h3>
+                <p>{area.description}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
