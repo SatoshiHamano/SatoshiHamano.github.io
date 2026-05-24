@@ -11,19 +11,20 @@ const text = {
     name: '濱野哲史',
     roman: 'Satoshi Hamano',
     intro:
-      '研究を軸に、データサイエンスとソフトウェアで問いを形にする人です。CVというより、研究ノートと実験場が混ざった軽い自己紹介ページとして育てていきます。',
+      '赤外線天文学を専門に、東京大学で博士号を取得しました。装置開発チームでの経験を持ち、高分散分光観測を用いた宇宙物理学研究に取り組んできました。',
     ctaGithub: 'GitHubを見る',
-    ctaPlay: '遊び場へ',
+    ctaPlay: 'Playgroundへ',
     researchTitle: '研究のこと',
     researchCopy:
-      '関心領域、論文、発表、プロジェクトを少しずつ整理していく場所です。まずは大きなテーマと代表的な成果を短く見せ、詳細なCVやPDFは必要になったら追加します。',
-    researchItems: ['研究テーマの地図', '論文・発表のハイライト', '共同研究・プロジェクト'],
+      '赤外線高分散分光、星間物質、装置開発に関する研究の入口です。論文や研究者IDへのリンクをここにまとめ、詳しい研究内容は少しずつ追加していきます。',
+    researchItems: ['赤外線天文学', '高分散分光観測', '装置開発とデータ解析'],
+    researchItemNote: '関連する研究テーマ、論文、観測データへのメモを追加していきます。',
     careerTitle: 'データサイエンティストとして',
     careerCopy:
       '企業での実務は、分析・予測・意思決定支援・実装までをまとめて紹介する予定です。社名や数値を出せないものは、問題設定とアプローチ中心に書けます。',
     profilesTitle: 'Profiles',
     profilesCopy:
-      '研究者としての公開プロフィール、コード、識別子、職業SNSをまとめる入口です。GitHubは実験と実装、researchmapとORCIDは研究成果への導線として並べます。',
+      'コード、実験、職業SNSなど、研究以外の公開プロフィールをまとめる入口です。',
     contactTitle: 'Contact',
     contactCopy: 'LinkedIn or GitHub is the easiest way to reach me. Email available on request.',
     githubUser: 'SatoshiHamano',
@@ -40,19 +41,20 @@ const text = {
     name: 'Satoshi Hamano',
     roman: '濱野哲史',
     intro:
-      'I work around research, data science, and software. This site is meant to feel less like a formal CV and more like a light personal lab with notes, projects, and small browser experiments.',
+      'I received my PhD from the University of Tokyo, specializing in infrared astronomy. My research has involved instrument development and astrophysics with high-resolution spectroscopic observations.',
     ctaGithub: 'Open GitHub',
     ctaPlay: 'Visit Playground',
     researchTitle: 'Research',
     researchCopy:
-      'A compact home for research interests, papers, talks, and projects. The first version keeps things short, with room for a detailed CV or PDF later.',
-    researchItems: ['Map of research themes', 'Paper and talk highlights', 'Collaborations and projects'],
+      'A compact entry point for work around infrared high-resolution spectroscopy, interstellar matter, and instrumentation. Research profile links live here; deeper notes can be added over time.',
+    researchItems: ['Infrared astronomy', 'High-resolution spectroscopy', 'Instrumentation and data analysis'],
+    researchItemNote: 'Notes on related themes, papers, and observational data will be added here.',
     careerTitle: 'Industry Data Science',
     careerCopy:
       'Industry work can be summarized through problem settings, modeling choices, decision support, and implementation work, even when company names or exact metrics stay private.',
     profilesTitle: 'Profiles',
     profilesCopy:
-      'A compact set of doors into research profiles, code, identifiers, and professional networks. GitHub points to experiments and implementation; researchmap and ORCID anchor the research record.',
+      'A compact set of doors into code, experiments, and professional networks outside the research profile pages.',
     contactTitle: 'Contact',
     contactCopy: 'LinkedIn or GitHub is the easiest way to reach me. Email available on request.',
     githubUser: 'SatoshiHamano',
@@ -64,15 +66,16 @@ const text = {
   },
 }
 
-const skills = ['Bayesian modeling', 'Causal inference', 'Python', 'R', 'TypeScript', 'Visualization']
+const skills = [
+  'Infrared astronomy',
+  'High-resolution spectroscopy',
+  'Instrumentation',
+  'Python',
+  'Data science',
+  'Visualization',
+]
 
-const profileLinks = [
-  {
-    label: 'GitHub',
-    value: 'SatoshiHamano',
-    href: 'https://github.com/SatoshiHamano',
-    note: 'Repositories, experiments, and public activity',
-  },
+const researchLinks = [
   {
     label: 'researchmap',
     value: 'HAMANO SATOSHI',
@@ -84,6 +87,15 @@ const profileLinks = [
     value: '0000-0002-6505-3395',
     href: 'https://orcid.org/0000-0002-6505-3395',
     note: 'Persistent researcher identifier',
+  },
+]
+
+const profileLinks = [
+  {
+    label: 'GitHub',
+    value: 'SatoshiHamano',
+    href: 'https://github.com/SatoshiHamano',
+    note: 'Repositories, experiments, and public activity',
   },
   {
     label: 'LinkedIn',
@@ -179,9 +191,18 @@ function App() {
             <article className="mini-card" key={item}>
               <span />
               <h3>{item}</h3>
-              <p>TODO: add selected details, links, and short notes.</p>
+              <p>{t.researchItemNote}</p>
             </article>
           ))}
+          <div className="research-link-grid">
+            {researchLinks.map((link) => (
+              <a className="research-link-card" href={link.href} key={link.label}>
+                <span>{link.label}</span>
+                <strong>{link.value}</strong>
+                <small>{link.note}</small>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 

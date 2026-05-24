@@ -233,6 +233,7 @@ h3 {
 }
 
 .mini-card,
+.research-link-card,
 .profile-card,
 .game-panel {
   background: #fff;
@@ -258,6 +259,39 @@ h3 {
   font-size: 0.94rem;
   line-height: 1.6;
   margin-bottom: 0;
+}
+
+.research-link-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 10px;
+}
+
+.research-link-card {
+  color: #17202d;
+  display: grid;
+  gap: 10px;
+  min-height: 150px;
+  padding: 22px;
+  text-decoration: none;
+}
+
+.research-link-card span {
+  color: #a64837;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.research-link-card strong {
+  font-size: clamp(1.35rem, 2vw, 2rem);
+  line-height: 1.04;
+  overflow-wrap: anywhere;
+}
+
+.research-link-card small {
+  align-self: end;
+  color: #465365;
+  font-size: 0.96rem;
 }
 
 .career-band {
