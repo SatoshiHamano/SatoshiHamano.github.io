@@ -310,8 +310,10 @@ function App() {
               </a>
             ))}
           </div>
-          <div className="publication-block">
-            <p className="section-kicker">{t.publicationsTitle}</p>
+          <details className="publication-block">
+            <summary>
+              <span className="section-kicker">{t.publicationsTitle}</span>
+            </summary>
             <div className="publication-columns">
               <section className="publication-list" aria-labelledby="first-author-papers">
                 <h3 id="first-author-papers">{t.firstAuthorTitle}</h3>
@@ -334,7 +336,7 @@ function App() {
                 ))}
               </section>
             </div>
-          </div>
+          </details>
         </div>
       </section>
 

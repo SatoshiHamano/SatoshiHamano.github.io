@@ -332,10 +332,43 @@ h3 {
   margin-top: 24px;
 }
 
+.publication-block summary {
+  align-items: center;
+  background: #1e2a39;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 18px 20px;
+}
+
+.publication-block summary::-webkit-details-marker {
+  display: none;
+}
+
+.publication-block summary::after {
+  color: #f5dd7b;
+  content: "+";
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.publication-block[open] summary::after {
+  content: "-";
+}
+
+.publication-block summary .section-kicker {
+  color: #f5dd7b;
+  margin: 0;
+}
+
 .publication-columns {
   display: grid;
   gap: 18px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 18px;
 }
 
 .publication-list {
