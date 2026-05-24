@@ -38,9 +38,9 @@ const text = {
     publicationsTitle: 'Selected publications',
     firstAuthorTitle: '主著論文',
     coauthorTitle: '共著論文',
-    careerTitle: 'データサイエンティストとして',
+    careerTitle: 'Industry Career',
     careerCopy:
-      '企業での実務は、分析・予測・意思決定支援・実装までをまとめて紹介する予定です。社名や数値を出せないものは、問題設定とアプローチ中心に書けます。',
+      'Senior Data Scientist / team leaderとして、出版業界の物流に関わる需要予測、数理最適化、サプライチェーンマネジメント理論の実装を担当しています。レコメンドや分析に閉じず、フィジカルな物流を動かす数値設計と意思決定支援をチームマネジメントも含めて管轄しています。',
     profilesTitle: 'Profiles',
     profilesCopy:
       'コード、実験、職業SNSなど、研究以外の公開プロフィールをまとめる入口です。',
@@ -89,7 +89,7 @@ const text = {
     coauthorTitle: 'Co-authored papers',
     careerTitle: 'Industry Data Science',
     careerCopy:
-      'Industry work can be summarized through problem settings, modeling choices, decision support, and implementation work, even when company names or exact metrics stay private.',
+      'As a Senior Data Scientist and team leader, I work on demand forecasting, mathematical optimization, and applied supply-chain management for physical logistics in the publishing industry. The work goes beyond recommendation or analysis: it governs numerical decision-making that directly affects inventory flow, distribution, and operational execution.',
     profilesTitle: 'Profiles',
     profilesCopy:
       'A compact set of doors into code, experiments, and professional networks outside the research profile pages.',
@@ -105,12 +105,12 @@ const text = {
 }
 
 const skills = [
-  'Infrared astronomy',
-  'High-resolution spectroscopy',
-  'Instrumentation',
+  'Demand forecasting',
+  'Mathematical optimization',
+  'Supply chain management',
+  'Team leadership',
   'Python',
-  'Data science',
-  'Visualization',
+  'Operations',
 ]
 
 const researchLinks = [
