@@ -48,7 +48,8 @@ const text = {
     profilesCopy:
       'コード、実験、職業SNSなど、研究以外の公開プロフィールをまとめる入口です。',
     contactTitle: 'Contact',
-    contactCopy: 'LinkedIn or GitHub is the easiest way to reach me. Email available on request.',
+    contactCopy:
+      'データ分析、需要予測、数理最適化、研究データ解析支援などの相談はLinkedInまたはGitHubからご連絡ください。Email available on request.',
     githubUser: 'SatoshiHamano',
     playgroundTitle: 'Playground',
     playgroundCopy: '小さなブラウザ実験を置く場所です。まずは点を研究クラスタに集めるミニゲームを入れています。',
@@ -100,7 +101,8 @@ const text = {
     profilesCopy:
       'A compact set of doors into code, experiments, and professional networks outside the research profile pages.',
     contactTitle: 'Contact',
-    contactCopy: 'LinkedIn or GitHub is the easiest way to reach me. Email available on request.',
+    contactCopy:
+      'For data analysis, forecasting, optimization, or academic research-data support, please reach me via LinkedIn or GitHub. Email available on request.',
     githubUser: 'SatoshiHamano',
     playgroundTitle: 'Playground',
     playgroundCopy: 'A corner for small browser experiments. The first toy gathers data points into a research cluster.',
