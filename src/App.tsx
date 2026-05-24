@@ -106,6 +106,12 @@ const projectLinks = [
     note: 'A near-infrared high-resolution spectrograph central to my instrumentation and observing work.',
   },
   {
+    label: 'WARP',
+    value: 'WINERED Automatic Reduction Pipeline',
+    href: 'https://github.com/SatoshiHamano/WARP',
+    note: 'A Python pipeline for reducing spectroscopic data obtained with WINERED.',
+  },
+  {
     label: 'Subaru / PFS',
     value: 'Prime Focus Spectrograph',
     href: 'https://pfs.naoj.org/instrumentation.html',
