@@ -19,6 +19,9 @@ const text = {
       '赤外線高分散分光、星間物質、装置開発に関する研究の入口です。論文や研究者IDへのリンクをここにまとめ、詳しい研究内容は少しずつ追加していきます。',
     researchItems: ['赤外線天文学', '高分散分光観測', '装置開発とデータ解析'],
     researchItemNote: '関連する研究テーマ、論文、観測データへのメモを追加していきます。',
+    publicationsTitle: 'Selected publications',
+    firstAuthorTitle: '主著論文',
+    coauthorTitle: '共著論文',
     careerTitle: 'データサイエンティストとして',
     careerCopy:
       '企業での実務は、分析・予測・意思決定支援・実装までをまとめて紹介する予定です。社名や数値を出せないものは、問題設定とアプローチ中心に書けます。',
@@ -49,6 +52,9 @@ const text = {
       'A compact entry point for work around infrared high-resolution spectroscopy, interstellar matter, and instrumentation. Research profile links live here; deeper notes can be added over time.',
     researchItems: ['Infrared astronomy', 'High-resolution spectroscopy', 'Instrumentation and data analysis'],
     researchItemNote: 'Notes on related themes, papers, and observational data will be added here.',
+    publicationsTitle: 'Selected publications',
+    firstAuthorTitle: 'First-author papers',
+    coauthorTitle: 'Co-authored papers',
     careerTitle: 'Industry Data Science',
     careerCopy:
       'Industry work can be summarized through problem settings, modeling choices, decision support, and implementation work, even when company names or exact metrics stay private.',
@@ -102,6 +108,72 @@ const profileLinks = [
     value: 'Satoshi Hamano',
     href: 'https://www.linkedin.com/in/satoshi-hamano-6800ba391/',
     note: 'Professional profile and career network',
+  },
+]
+
+const firstAuthorPapers = [
+  {
+    year: '2024',
+    title: 'WARP: The Data Reduction Pipeline for the WINERED Spectrograph',
+    venue: 'Publications of the Astronomical Society of the Pacific',
+    href: 'https://arxiv.org/abs/2401.04876',
+  },
+  {
+    year: '2022',
+    title: 'Survey of Near-infrared Diffuse Interstellar Bands in Y and J Bands. I. Newly Identified Bands',
+    venue: 'The Astrophysical Journal Supplement Series',
+    href: 'https://arxiv.org/abs/2206.03131',
+  },
+  {
+    year: '2019',
+    title: 'First Detection of A-X (0,0) Bands of Interstellar C2 and CN',
+    venue: 'The Astrophysical Journal',
+    href: 'https://doi.org/10.3847/1538-4357/ab2e0f',
+  },
+  {
+    year: '2016',
+    title: 'Near Infrared Diffuse Interstellar Bands Toward the Cygnus OB2 Association',
+    venue: 'The Astrophysical Journal',
+    href: 'https://doi.org/10.3847/0004-637X/821/1/42',
+  },
+  {
+    year: '2015',
+    title: 'Near-infrared diffuse interstellar bands in 0.91-1.32 μm',
+    venue: 'The Astrophysical Journal',
+    href: 'https://doi.org/10.1088/0004-637X/800/2/137',
+  },
+]
+
+const coauthorPapers = [
+  {
+    year: '2025',
+    title: 'MAGIS (Measuring Abundances of red super Giants with Infrared Spectroscopy) project',
+    venue: 'Astronomy & Astrophysics',
+  },
+  {
+    year: '2024',
+    title: '[N i] 10400/10410 Å Lines as Possible Disk Wind Tracers in a Young Intermediate-mass Star',
+    venue: 'The Astrophysical Journal',
+  },
+  {
+    year: '2024',
+    title: 'Shock Excitation in Narrow-line Regions Powered by AGN Outflows',
+    venue: 'The Astrophysical Journal',
+  },
+  {
+    year: '2023',
+    title: 'Metallicities of Classical Cepheids in the Inner Galactic Disk',
+    venue: 'The Astrophysical Journal',
+  },
+  {
+    year: '2022',
+    title: 'Highly Sensitive, Non-cryogenic NIR High-resolution Spectrograph, WINERED',
+    venue: 'Publications of the Astronomical Society of the Pacific',
+  },
+  {
+    year: '2021',
+    title: 'Effective temperatures of red supergiants estimated from line-depth ratios in the YJ bands',
+    venue: 'Monthly Notices of the Royal Astronomical Society',
   },
 ]
 
@@ -202,6 +274,31 @@ function App() {
                 <small>{link.note}</small>
               </a>
             ))}
+          </div>
+          <div className="publication-block">
+            <p className="section-kicker">{t.publicationsTitle}</p>
+            <div className="publication-columns">
+              <section className="publication-list" aria-labelledby="first-author-papers">
+                <h3 id="first-author-papers">{t.firstAuthorTitle}</h3>
+                {firstAuthorPapers.map((paper) => (
+                  <a className="paper-row" href={paper.href} key={paper.title}>
+                    <span>{paper.year}</span>
+                    <strong>{paper.title}</strong>
+                    <small>{paper.venue}</small>
+                  </a>
+                ))}
+              </section>
+              <section className="publication-list" aria-labelledby="coauthor-papers">
+                <h3 id="coauthor-papers">{t.coauthorTitle}</h3>
+                {coauthorPapers.map((paper) => (
+                  <article className="paper-row" key={paper.title}>
+                    <span>{paper.year}</span>
+                    <strong>{paper.title}</strong>
+                    <small>{paper.venue}</small>
+                  </article>
+                ))}
+              </section>
+            </div>
           </div>
         </div>
       </section>
