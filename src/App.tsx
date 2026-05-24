@@ -11,7 +11,7 @@ const text = {
     name: '濱野哲史',
     roman: 'Satoshi Hamano',
     intro:
-      '研究、データサイエンス、コード、読んだものや小さな実験をゆるく置いていく個人ページです。',
+      '研究、データサイエンス、コード、読んだものや小さな実験を置いていく個人ページです。',
     ctaGithub: 'GitHubを見る',
     ctaPlay: 'Playgroundへ',
     researchTitle: 'Academic Interests',
