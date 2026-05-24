@@ -316,17 +316,6 @@ h3 {
   font-size: 1rem;
 }
 
-.profile-card-pending {
-  background: repeating-linear-gradient(
-      -45deg,
-      rgba(30, 42, 57, 0.03),
-      rgba(30, 42, 57, 0.03) 8px,
-      rgba(255, 255, 255, 0.7) 8px,
-      rgba(255, 255, 255, 0.7) 16px
-    ),
-    #fff;
-}
-
 .playground {
   align-items: start;
 }

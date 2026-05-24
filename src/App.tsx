@@ -83,9 +83,9 @@ const profileLinks = [
   },
   {
     label: 'LinkedIn',
-    value: 'URL pending',
-    href: '',
-    note: 'Add after confirming the right profile',
+    value: 'Satoshi Hamano',
+    href: 'https://www.linkedin.com/in/satoshi-hamano-6800ba391/',
+    note: 'Professional profile and career network',
   },
 ]
 
