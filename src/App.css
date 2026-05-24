@@ -233,6 +233,7 @@ h3 {
 }
 
 .mini-card,
+.project-card,
 .research-link-card,
 .profile-card,
 .game-panel {
@@ -259,6 +260,39 @@ h3 {
   font-size: 0.94rem;
   line-height: 1.6;
   margin-bottom: 0;
+}
+
+.project-block {
+  margin-top: 24px;
+}
+
+.project-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.project-card {
+  color: #17202d;
+  display: grid;
+  gap: 10px;
+  padding: 22px;
+  text-decoration: none;
+}
+
+.project-card span {
+  color: #a64837;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.project-card strong {
+  font-size: clamp(1.25rem, 2vw, 1.9rem);
+  line-height: 1.15;
+}
+
+.project-card small {
+  color: #465365;
+  font-size: 0.96rem;
+  line-height: 1.55;
 }
 
 .research-link-grid {

@@ -19,6 +19,7 @@ const text = {
       '赤外線高分散分光、星間物質、装置開発に関する研究の入口です。論文や研究者IDへのリンクをここにまとめ、詳しい研究内容は少しずつ追加していきます。',
     researchItems: ['赤外線天文学', '高分散分光観測', '装置開発とデータ解析'],
     researchItemNote: '関連する研究テーマ、論文、観測データへのメモを追加していきます。',
+    projectsTitle: 'Instruments / Projects',
     publicationsTitle: 'Selected publications',
     firstAuthorTitle: '主著論文',
     coauthorTitle: '共著論文',
@@ -52,6 +53,7 @@ const text = {
       'A compact entry point for work around infrared high-resolution spectroscopy, interstellar matter, and instrumentation. Research profile links live here; deeper notes can be added over time.',
     researchItems: ['Infrared astronomy', 'High-resolution spectroscopy', 'Instrumentation and data analysis'],
     researchItemNote: 'Notes on related themes, papers, and observational data will be added here.',
+    projectsTitle: 'Instruments / Projects',
     publicationsTitle: 'Selected publications',
     firstAuthorTitle: 'First-author papers',
     coauthorTitle: 'Co-authored papers',
@@ -93,6 +95,27 @@ const researchLinks = [
     value: '0000-0002-6505-3395',
     href: 'https://orcid.org/0000-0002-6505-3395',
     note: 'Persistent researcher identifier',
+  },
+]
+
+const projectLinks = [
+  {
+    label: 'WINERED',
+    value: 'Warm near-infrared high-resolution spectrograph',
+    href: 'https://merlot.kyoto-su.ac.jp/WINERED/ETC/',
+    note: 'A near-infrared high-resolution spectrograph central to my instrumentation and observing work.',
+  },
+  {
+    label: 'Subaru / PFS',
+    value: 'Prime Focus Spectrograph',
+    href: 'https://pfs.naoj.org/instrumentation.html',
+    note: 'A wide-field multi-object spectrograph for the Subaru Telescope.',
+  },
+  {
+    label: 'TMT',
+    value: 'Thirty Meter Telescope',
+    href: 'https://www.tmt.org/',
+    note: 'An international next-generation optical-infrared extremely large telescope project.',
   },
 ]
 
@@ -266,6 +289,18 @@ function App() {
               <p>{t.researchItemNote}</p>
             </article>
           ))}
+          <div className="project-block">
+            <p className="section-kicker">{t.projectsTitle}</p>
+            <div className="project-grid">
+              {projectLinks.map((project) => (
+                <a className="project-card" href={project.href} key={project.label}>
+                  <span>{project.label}</span>
+                  <strong>{project.value}</strong>
+                  <small>{project.note}</small>
+                </a>
+              ))}
+            </div>
+          </div>
           <div className="research-link-grid">
             {researchLinks.map((link) => (
               <a className="research-link-card" href={link.href} key={link.label}>
