@@ -14,7 +14,7 @@ const text = {
       '赤外線天文学を専門に、東京大学で博士号を取得しました。装置開発チームでの経験を持ち、高分散分光観測を用いた宇宙物理学研究に取り組んできました。',
     ctaGithub: 'GitHubを見る',
     ctaPlay: 'Playgroundへ',
-    researchTitle: '研究のこと',
+    researchTitle: 'Academic Interests',
     researchCopy:
       '赤外線高分散分光、星間物質、装置開発に関する研究の入口です。論文や研究者IDへのリンクをここにまとめ、詳しい研究内容は少しずつ追加していきます。',
     researchItems: ['赤外線天文学', '高分散分光観測', '装置開発とデータ解析'],
@@ -48,7 +48,7 @@ const text = {
       'I received my PhD from the University of Tokyo, specializing in infrared astronomy. My research has involved instrument development and astrophysics with high-resolution spectroscopic observations.',
     ctaGithub: 'Open GitHub',
     ctaPlay: 'Visit Playground',
-    researchTitle: 'Research',
+    researchTitle: 'Academic Interests',
     researchCopy:
       'A compact entry point for work around infrared high-resolution spectroscopy, interstellar matter, and instrumentation. Research profile links live here; deeper notes can be added over time.',
     researchItems: ['Infrared astronomy', 'High-resolution spectroscopy', 'Instrumentation and data analysis'],
