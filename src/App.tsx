@@ -24,6 +24,8 @@ const text = {
     profilesTitle: 'Profiles',
     profilesCopy:
       '研究者としての公開プロフィール、コード、識別子、職業SNSをまとめる入口です。GitHubは実験と実装、researchmapとORCIDは研究成果への導線として並べます。',
+    contactTitle: 'Contact',
+    contactCopy: 'LinkedIn or GitHub is the easiest way to reach me. Email available on request.',
     githubUser: 'SatoshiHamano',
     playgroundTitle: 'Playground',
     playgroundCopy: '小さなブラウザ実験を置く場所です。まずは点を研究クラスタに集めるミニゲームを入れています。',
@@ -51,6 +53,8 @@ const text = {
     profilesTitle: 'Profiles',
     profilesCopy:
       'A compact set of doors into research profiles, code, identifiers, and professional networks. GitHub points to experiments and implementation; researchmap and ORCID anchor the research record.',
+    contactTitle: 'Contact',
+    contactCopy: 'LinkedIn or GitHub is the easiest way to reach me. Email available on request.',
     githubUser: 'SatoshiHamano',
     playgroundTitle: 'Playground',
     playgroundCopy: 'A corner for small browser experiments. The first toy gathers data points into a research cluster.',
@@ -216,6 +220,10 @@ function App() {
               </article>
             ),
           )}
+        </div>
+        <div className="contact-note">
+          <span>{t.contactTitle}</span>
+          <p>{t.contactCopy}</p>
         </div>
       </section>
 

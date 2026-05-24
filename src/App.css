@@ -290,6 +290,10 @@ h3 {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
+.profiles-section {
+  align-items: start;
+}
+
 .profile-card {
   color: #17202d;
   display: grid;
@@ -314,6 +318,28 @@ h3 {
   align-self: end;
   color: #465365;
   font-size: 1rem;
+}
+
+.contact-note {
+  background: #1e2a39;
+  border-radius: 8px;
+  color: #fff;
+  grid-column: 2;
+  padding: 22px 24px;
+}
+
+.contact-note span {
+  color: #f5dd7b;
+  display: block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  margin-bottom: 10px;
+}
+
+.contact-note p {
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 0;
 }
 
 .playground {
@@ -400,6 +426,10 @@ footer {
 
   .profile-grid {
     grid-template-columns: 1fr;
+  }
+
+  .contact-note {
+    grid-column: auto;
   }
 }
 
