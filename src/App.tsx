@@ -11,7 +11,7 @@ const text = {
     name: '濱野哲史',
     roman: 'Satoshi Hamano',
     intro:
-      '赤外線天文学を専門に、東京大学で博士号を取得しました。装置開発チームでの経験を持ち、高分散分光観測を用いた宇宙物理学研究に取り組んできました。',
+      '研究、データサイエンス、コード、読んだものや小さな実験をゆるく置いていく個人ページです。',
     ctaGithub: 'GitHubを見る',
     ctaPlay: 'Playgroundへ',
     researchTitle: 'Academic Interests',
@@ -60,7 +60,7 @@ const text = {
     name: 'Satoshi Hamano',
     roman: '濱野哲史',
     intro:
-      'I received my PhD from the University of Tokyo, specializing in infrared astronomy. My research has involved instrument development and astrophysics with high-resolution spectroscopic observations.',
+      'A personal page for research, data science, code, notes, and small browser experiments.',
     ctaGithub: 'Open GitHub',
     ctaPlay: 'Visit Playground',
     researchTitle: 'Academic Interests',
