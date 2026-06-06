@@ -43,8 +43,7 @@ nav {
 
 nav a,
 .lang-toggle,
-.button,
-.game-header button {
+.button {
   border-radius: 8px;
   font: inherit;
 }
@@ -55,8 +54,7 @@ nav a {
   text-decoration: none;
 }
 
-.lang-toggle,
-.game-header button {
+.lang-toggle {
   background: #fff;
   border: 1px solid rgba(28, 37, 65, 0.16);
   color: #1e2a39;
@@ -186,8 +184,7 @@ h3 {
   transform: rotate(18deg) scaleX(1.35);
 }
 
-.data-dot,
-.game-dot {
+.data-dot {
   background: #db6955;
   border-radius: 50%;
   position: absolute;
@@ -236,7 +233,7 @@ h3 {
 .project-card,
 .research-link-card,
 .profile-card,
-.game-panel {
+.experiment-card {
   background: #fff;
   border: 1px solid rgba(28, 37, 65, 0.12);
   border-radius: 8px;
@@ -528,52 +525,31 @@ h3 {
   align-items: start;
 }
 
-.game-panel {
-  padding: 16px;
+.experiment-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.game-header {
-  align-items: center;
-  display: flex;
-  gap: 12px;
-  justify-content: space-between;
-  margin-bottom: 14px;
+.experiment-card {
+  display: grid;
+  gap: 10px;
+  min-height: 180px;
+  padding: 22px;
 }
 
-.game-header span {
-  color: #17202d;
-  font-weight: 900;
+.experiment-card span {
+  color: #a64837;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.82rem;
+  text-transform: uppercase;
 }
 
-.game-field {
-  aspect-ratio: 16 / 10;
-  background:
-    linear-gradient(rgba(30, 42, 57, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(30, 42, 57, 0.08) 1px, transparent 1px),
-    #f8f7f3;
-  background-size: 28px 28px;
-  border: 1px solid rgba(28, 37, 65, 0.1);
-  border-radius: 8px;
-  overflow: hidden;
-  position: relative;
-}
-
-.cluster-target {
-  background: rgba(61, 111, 115, 0.16);
-  border: 2px dashed rgba(61, 111, 115, 0.6);
-  border-radius: 50%;
-  height: 118px;
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 118px;
-}
-
-.game-dot {
-  border: 2px solid #fff;
-  box-shadow: 0 4px 12px rgba(29, 39, 53, 0.22);
-  cursor: pointer;
+.experiment-card p {
+  color: #465365;
+  font-size: 0.96rem;
+  line-height: 1.6;
+  margin-bottom: 0;
 }
 
 footer {
@@ -622,6 +598,10 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .experiment-grid {
+    grid-template-columns: 1fr;
+  }
+
   .contact-note {
     grid-column: auto;
   }
@@ -635,10 +615,5 @@ footer {
   .button,
   .hero-actions {
     width: 100%;
-  }
-
-  .game-header {
-    align-items: stretch;
-    flex-direction: column;
   }
 }

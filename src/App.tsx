@@ -52,10 +52,10 @@ const text = {
       'データ分析、需要予測、数理最適化、研究データ解析支援などの相談はLinkedInまたはGitHubからご連絡ください。Email available on request.',
     githubUser: 'SatoshiHamano',
     playgroundTitle: 'Playground',
-    playgroundCopy: '小さなブラウザ実験を置く場所です。まずは点を研究クラスタに集めるミニゲームを入れています。',
-    gameScore: 'Score',
-    gameButton: '点を増やす',
-    footer: 'Built for GitHub Pages. More notes, papers, and small games will land here.',
+    playgroundCopy:
+      'ブラウザで動く小さな実験やメモ置き場です。ゲームを無理に置くより、分析・最適化・読書記録など、このページとつながるものを少しずつ足していきます。',
+    playgroundStatus: 'planned',
+    footer: 'Built for GitHub Pages. More notes, papers, and browser experiments will land here.',
   },
   en: {
     nav: ['Home', 'Research', 'Career', 'Profiles', 'Playground'],
@@ -105,10 +105,10 @@ const text = {
       'For data analysis, forecasting, optimization, or academic research-data support, please reach me via LinkedIn or GitHub. Email available on request.',
     githubUser: 'SatoshiHamano',
     playgroundTitle: 'Playground',
-    playgroundCopy: 'A corner for small browser experiments. The first toy gathers data points into a research cluster.',
-    gameScore: 'Score',
-    gameButton: 'Add points',
-    footer: 'Built for GitHub Pages. More notes, papers, and small games will land here.',
+    playgroundCopy:
+      'A place for small browser experiments and notes. This section will collect demos connected to analysis, optimization, reading logs, and research tools.',
+    playgroundStatus: 'planned',
+    footer: 'Built for GitHub Pages. More notes, papers, and browser experiments will land here.',
   },
 }
 
@@ -137,6 +137,25 @@ const helpAreas = [
   {
     label: 'Academic support',
     description: 'Data analysis, visualization, and technical consultation for research projects.',
+  },
+]
+
+const playgroundItems = [
+  {
+    title: 'Forecasting sketch',
+    description: 'A small visual demo for demand curves, seasonality, uncertainty, and inventory decisions.',
+  },
+  {
+    title: 'Optimization sandbox',
+    description: 'A toy allocation problem for seeing how constraints change logistics or scheduling decisions.',
+  },
+  {
+    title: 'Shelf log',
+    description: 'A lightweight place for books, films, notes, and links to longer writeups.',
+  },
+  {
+    title: 'Spectral tools',
+    description: 'Tiny utilities or visual notes around spectra, absorption lines, and research data.',
   },
 ]
 
@@ -278,10 +297,8 @@ function makePoints(seed: number) {
 
 function App() {
   const [lang, setLang] = useState<Lang>('ja')
-  const [seed, setSeed] = useState(1)
-  const [score, setScore] = useState(0)
   const t = text[lang]
-  const points = useMemo(() => makePoints(seed), [seed])
+  const points = useMemo(() => makePoints(1), [])
 
   return (
     <main>
@@ -463,39 +480,14 @@ function App() {
           <h2>{t.playgroundTitle}</h2>
           <p>{t.playgroundCopy}</p>
         </div>
-        <div className="game-panel">
-          <div className="game-header">
-            <span>
-              {t.gameScore}: {score}
-            </span>
-            <button
-              type="button"
-              onClick={() => {
-                setSeed((current) => current + 1)
-                setScore((current) => current + 3)
-              }}
-            >
-              {t.gameButton}
-            </button>
-          </div>
-          <div className="game-field" aria-label="Data point mini game">
-            <div className="cluster-target" />
-            {points.map((point, index) => (
-              <button
-                className="game-dot"
-                key={point.id}
-                type="button"
-                style={{
-                  left: `${point.x}%`,
-                  top: `${point.y}%`,
-                  width: point.size + 10,
-                  height: point.size + 10,
-                }}
-                aria-label={`data point ${index + 1}`}
-                onClick={() => setScore((current) => current + 1)}
-              />
-            ))}
-          </div>
+        <div className="experiment-grid">
+          {playgroundItems.map((item) => (
+            <article className="experiment-card" key={item.title}>
+              <span>{t.playgroundStatus}</span>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </article>
+          ))}
         </div>
       </section>
 
